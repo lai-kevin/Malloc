@@ -14,21 +14,6 @@ size_t block_size(sf_block *blockPointer){
 }
 
 void place_in_freelists(sf_block *block){
-    /*
-    //adds to end
-    for(int i = 0; i < NUM_FREE_LISTS; i++){
-        if((32 * pow(2, i) >= block_size(block)) || i == (NUM_FREE_LISTS-1)){
-            sf_block *tail = sf_free_list_heads[i].body.links.prev;
-            sf_block *temp = tail -> body.links.next;
-            block -> body.links.next = temp;
-            block -> body.links.prev = tail;
-            tail -> body.links.next = block;
-            temp -> body.links.prev = block;
-            tail = block;
-            return;
-        }
-    }
-    */
     //adds to beginning
     size_t prev_upper_bound = 0;
     size_t pow_2 = 1;
@@ -162,7 +147,6 @@ int attempt_grow_heap(){
 
     }
     else{
-        //sf_show_heap();
         //get previous footer
         old_epilogue--;
         size_t prev_block_size = *old_epilogue;
