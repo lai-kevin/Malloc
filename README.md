@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a dynamic memory allocator implemented in C for x86-64 architecture. It was developed as part of a homework assignment, focusing on efficient memory management. The allocator employs segregated free lists and "quick lists" to improve time complexity, and it features immediate coalescing of large blocks with adjacent free blocks on free operations. Additionally, the allocator ensures that blocks are split without generating splinters and omits block footers to improve space efficiency.
+This is a dynamic memory allocator implemented in C for x86-64 architecture. The allocator employs segregated free lists and "quick lists" to improve time complexity, and it features immediate coalescing of large blocks with adjacent free blocks on free operations. Additionally, the allocator ensures that blocks are split without generating splinters and omits block footers to improve space efficiency.
 
 ## Features
 
